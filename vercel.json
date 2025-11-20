@@ -3,7 +3,6 @@
   "devCommand": "cd ../.. && pnpm turbo dev --filter=web",
   "installCommand": "cd ../.. && pnpm install",
   "framework": "nextjs",
-  "outputDirectory": "apps/web/.next",
-  "rootDirectory": "apps/web"
+  "outputDirectory": "apps/web/.next"
 }
 
