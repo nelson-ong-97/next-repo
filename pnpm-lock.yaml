@@ -57,6 +57,9 @@ importers:
       '@types/node':
         specifier: ^22.13.11
         version: 22.19.1
+      prettier:
+        specifier: ^3.4.2
+        version: 3.6.2
       turbo:
         specifier: ^2.5.4
         version: 2.6.1
@@ -3054,6 +3057,11 @@ packages:
   postgres@3.4.7:
     resolution: {integrity: sha512-Jtc2612XINuBjIl/QTWsV5UvE8UHuNblcO3vVADSrKsrc6RqGX6lOW1cEo3CM2v0XG4Nat8nI+YM7/f26VxXLw==}
     engines: {node: '>=12'}
+
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   prisma@7.0.0:
     resolution: {integrity: sha512-VZObZ1pQV/OScarYg68RYUx61GpFLH2mJGf9fUX4XxQxTst/6ZK7nkY86CSZ3zBW6U9lKRTsBrZWVz20X5G/KQ==}
@@ -6916,6 +6924,8 @@ snapshots:
       xtend: 4.0.2
 
   postgres@3.4.7: {}
+
+  prettier@3.6.2: {}
 
   prisma@7.0.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.3):
     dependencies:

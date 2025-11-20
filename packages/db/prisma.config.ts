@@ -6,9 +6,9 @@ import { existsSync } from "node:fs";
 // Only load .env file if it exists (for local development)
 const envPath = path.join(process.cwd(), "../../apps/web/.env");
 if (existsSync(envPath)) {
-	dotenv.config({
-		path: envPath,
-	});
+  dotenv.config({
+    path: envPath,
+  });
 }
 
 // For prisma generate, we don't need a real DATABASE_URL, but the config requires it
@@ -16,11 +16,11 @@ if (existsSync(envPath)) {
 const databaseUrl = process.env.DATABASE_URL || "postgresql://dummy:dummy@localhost:5432/dummy";
 
 export default defineConfig({
-	schema: path.join("prisma", "schema"),
-	migrations: {
-		path: path.join("prisma", "migrations"),
-	},
-	datasource: {
-		url: databaseUrl,
-	},
+  schema: path.join("prisma", "schema"),
+  migrations: {
+    path: path.join("prisma", "migrations"),
+  },
+  datasource: {
+    url: databaseUrl,
+  },
 });

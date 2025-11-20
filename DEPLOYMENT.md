@@ -11,6 +11,7 @@ This guide will help you deploy your Turbo monorepo to Vercel.
 ## Step 1: Prepare Your Repository
 
 The repository is already configured with:
+
 - ✅ `vercel.json` - Vercel configuration for monorepo
 - ✅ Build scripts in `packages/db` for Prisma client generation
 - ✅ Turbo build pipeline configured
@@ -27,10 +28,13 @@ The repository is already configured with:
 In the Vercel project settings, configure:
 
 ### Root Directory
+
 - **Root Directory**: `apps/web` (or leave empty - Vercel will use the `vercel.json` config)
 
 ### Build & Development Settings
+
 Vercel should auto-detect these from `vercel.json`, but verify:
+
 - **Framework Preset**: Next.js
 - **Build Command**: `cd ../.. && pnpm turbo build --filter=web`
 - **Output Directory**: `apps/web/.next`
@@ -44,11 +48,13 @@ Add the following environment variables in Vercel Dashboard → Settings → Env
 #### Required Variables
 
 1. **Database Connection**
+
    ```
    DATABASE_URL=postgresql://user:password@host:port/database
    ```
 
 2. **Better Auth Configuration**
+
    ```
    BETTER_AUTH_SECRET=your-secret-key-here
    BETTER_AUTH_URL=https://your-domain.vercel.app
@@ -87,6 +93,7 @@ Add the following environment variables in Vercel Dashboard → Settings → Env
 After setting up the database, you'll need to run migrations:
 
 **Option 1: Using Vercel CLI (Recommended)**
+
 ```bash
 # Install Vercel CLI if you haven't
 npm i -g vercel
@@ -114,6 +121,7 @@ You can add a build script that runs migrations, but be careful with production 
 ## Step 6: Verify Deployment
 
 After deployment:
+
 1. Check the deployment logs for any errors
 2. Visit your deployed URL
 3. Test authentication flows
@@ -147,6 +155,7 @@ After deployment:
 ## Continuous Deployment
 
 Once connected, Vercel will automatically:
+
 - Deploy on every push to `main` branch (production)
 - Create preview deployments for pull requests
 - Run builds using Turbo's caching for faster deployments
@@ -156,4 +165,3 @@ Once connected, Vercel will automatically:
 - [Vercel Monorepo Guide](https://vercel.com/docs/monorepos)
 - [Turbo + Vercel](https://turbo.build/repo/docs/core-concepts/monorepos/deploying)
 - [Next.js Deployment](https://nextjs.org/docs/deployment)
-
